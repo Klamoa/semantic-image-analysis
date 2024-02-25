@@ -1,0 +1,24 @@
+yolo:
+  path2model: "yolov8m.pt"
+  confThreshold: 0.5
+azure:
+  vision_endpoint: "https://meb-image-analysis.cognitiveservices.azure.com/"
+  vision_key: "56afb0f76ecc461d9527ea0f7c587354"
+  confThreshold: 0.5
+google:
+  confThreshold: 0.5
+grit:
+  path2model: "../grit/checkpoint/grit_checkpoint_vg.pth"
+  path2config: "../grit/configs/caption/coco_config.yaml"
+  path2vocab: "../ms-coco/annotations/vocab.json"
+magic:
+  path2language: "cambridgeltl/magic_mscoco"
+  path2clip: "openai/clip-vit-base-patch32"
+  k: 45
+  alpha: 0.1
+  beta: 2.0
+  decoding_len: 16
+cocoVal2014:
+  path2ann: "../ms-coco/annotations/captions_val2014.json"
+cocoVal2017:
+  path2ann: "../ms-coco/annotations/instances_val2017.json"
