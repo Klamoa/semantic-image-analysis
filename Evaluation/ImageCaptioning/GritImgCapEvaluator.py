@@ -21,7 +21,7 @@ from models.caption.detector import build_detector
 from engine.utils import nested_tensor_from_tensor_list
 
 
-class GritEvaluator(ImageCaptionEvaluator):
+class GritImgCapEvaluator(ImageCaptionEvaluator):
 
     __model = None
     __text_field = None
@@ -95,5 +95,5 @@ if __name__ == "__main__":
 
     config = parser.parse_args()
 
-    evaluator = GritEvaluator(config)
+    evaluator = GritImgCapEvaluator(config)
     evaluator.run_evaluation()

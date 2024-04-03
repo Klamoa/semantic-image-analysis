@@ -1,4 +1,3 @@
-import os
 import argparse
 import asyncio
 
@@ -11,7 +10,7 @@ from datasets.field import ImageField, TextField
 from datasets import build_coco_dataloaders
 
 
-class AzureAiVisionEvaluator(ImageCaptionEvaluator):
+class AzureAiVisionImgCapEvaluator(ImageCaptionEvaluator):
 
     __text_field = None
     __service_options = None
@@ -76,5 +75,5 @@ if __name__ == "__main__":
 
     config = parser.parse_args()
 
-    evaluator = AzureAiVisionEvaluator(config)
+    evaluator = AzureAiVisionImgCapEvaluator(config)
     evaluator.run_evaluation()

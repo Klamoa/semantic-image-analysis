@@ -1,5 +1,4 @@
 import argparse
-import asyncio
 import json
 
 from google.cloud import vision
@@ -10,7 +9,7 @@ import io
 from ObjectDetectionEvaluator import ObjectDetectionEvaluator
 
 
-class GoogleCloudVisionEvaluator(ObjectDetectionEvaluator):
+class GoogleCloudVisionObjDetEvaluator(ObjectDetectionEvaluator):
 
     __client = None
     __vocab = None
@@ -87,5 +86,5 @@ if __name__ == "__main__":
 
     config = parser.parse_args()
 
-    evaluator = GoogleCloudVisionEvaluator(config)
+    evaluator = GoogleCloudVisionObjDetEvaluator(config)
     evaluator.run_evaluation()

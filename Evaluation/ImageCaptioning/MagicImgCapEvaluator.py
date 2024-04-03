@@ -16,7 +16,7 @@ from image_captioning.clip.clip import CLIP
 from image_captioning.language_model.simctg import SimCTG
 
 
-class MagicEvaluator(ImageCaptionEvaluator):
+class MagicImgCapEvaluator(ImageCaptionEvaluator):
 
     __generation_model = None
     __clip = None
@@ -95,5 +95,5 @@ if __name__ == "__main__":
 
     config = parser.parse_args()
 
-    evaluator = MagicEvaluator(config)
+    evaluator = MagicImgCapEvaluator(config)
     evaluator.run_evaluation()

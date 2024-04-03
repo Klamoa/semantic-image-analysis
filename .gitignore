@@ -2,5 +2,7 @@
 grit
 Magic
 ms-coco
+venv
+__pycache__
 
 *.pt

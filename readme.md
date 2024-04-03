@@ -16,68 +16,75 @@ root
    * ``2017 Val images [5K/1GB]`` and ``2017 Train/Val annotations [241MB]`` for object detection
 3. Put the files (images and JSON) in to the correct directory under ``.\ms-coco``
 
+## Setup Python 3
+
+1. Python version used 3.11
+2. Run ``python install -r requirements.txt`` to install all requirements including GRIT and MAGIC
+3. Run ``python -m spacy download en`` (https://github.com/davidnvq/grit?tab=readme-ov-file#installation)
+4. Install the required CUDA version from https://pytorch.org/ (tested with CUDA 11.8)
+
 ## Image Captioning Evaluation
 
-### Running AzureAiVisionEvaluator
+### Running AzureAiVisionImgCapEvaluator
 
-To run ``AzureAiVisionEvaluator.py`` one need to do following steps:
+To run ``AzureAiVisionImgCapEvaluator.py`` one need to do following steps:
 
 1. Create an account for Azure
 2. Create a resource
 3. Run the command found in ``results.md`` from the ``.\Evaluation\ImageCaptioning`` directory with your ``endpoint`` and ``key``
 
-### Running GritEvaluator
+### Running GritImgCapEvaluator
 
-To run ``GritEvaluator.py`` one need to do following steps:
+To run ``GritImgCapEvaluator.py`` one need to do following steps:
 
 1. Clone the repository from https://github.com/davidnvq/grit.git
-2. Install the requirements as mentioned in the repository
-3. Run ``cd .\models\ops`` to change directory
-4. Run ``py setup.py build`` and ``py setup.py install`` to install ``MultiScaleDeformableAttention``
-5. Download a checkpoint from the model zoo found in https://github.com/davidnvq/grit and place the checkpoint into the folder ``checkpoint``
-6. Change ``ann_root``, ``img_root``, ``hdf_path`` and ``vocab_path`` to the location of the dataset. The file can be found in ``.\configs\caption\coco_config.yaml``
-7. Run the command found in ``results.md`` from the ``.\Evaluation\ImageCaptioning`` directory
+2. To install Deformable Attention:
+   * Change to ``cd grit/models/ops``
+   * Run ``python setup.py build develop`` to install the Deformable Attention
+   * Check success with ``python test.py``
+3. Download a checkpoint from the model zoo found in https://github.com/davidnvq/grit and place the checkpoint into the folder ``checkpoint``
+4. Change ``ann_root``, ``img_root``, ``hdf_path`` and ``vocab_path`` to the location of the dataset. The file can be found in ``.\configs\caption\coco_config.yaml``
+5. Run the command found in ``results.md`` from the ``.\Evaluation\ImageCaptioning`` directory
 
-### Running MagicEvaluator
+### Running MagicImgCapEvaluator
 
-To run ``MagicEvaluator.py`` one need to do following steps:
+To run ``MagicImgCapEvaluator.py`` one need to do following steps:
 
 1. Clone the repository from https://github.com/yxuansu/MAGIC.git
-2. Install the requirements as mentioned in the repository
-3. Make two changes in ``.\image_captioning\language_model\simctg.py``
+2. Make two changes in ``.\image_captioning\language_model\simctg.py``
    * Change line 13 to ``from .loss_func import contrastive_loss``
    * Change line 140 to ``from .utlis import PlugAndPlayContrastiveDecodingOneStepFast``
-4. Run the command found in ``results.md`` from the ``.\Evaluation\ImageCaptioning`` directory
+3. Run the command found in ``results.md`` from the ``.\Evaluation\ImageCaptioning`` directory
 
 ## Object Detection Evaluation
 
-### Running AzureAiVisionEvaluator
+### Running AzureAiVisionObjDetEvaluator
 
-To run ``AzureAiVisionEvaluator.py`` one need to do following steps:
+To run ``AzureAiVisionObjDetEvaluator.py`` one need to do following steps:
 
 1. Create an account for Azure
 2. Create a resource
 3. Run the command found in ``results.md`` from the ``.\Evaluation\ObjectDetection`` directory with your ``endpoint`` and ``key``
 
-### Running GoogleCloudVisionEvaluator
+### Running GoogleCloudVisionObjDetEvaluator
 
-To run ``GoogleCloudVisionEvaluator.py`` one need to do following steps:
+To run ``GoogleCloudVisionObjDetEvaluator.py`` one need to do following steps:
 
 1. Create an account for Google Cloud
 2. Follow the steps from Google to create a project and activate it
 3. Run the command found in ``results.md`` from the ``.\Evaluation\ObjectDetection`` directory
 
-### Running YoloEvaluator
+### Running YoloObjDetEvaluator
 
-To run ``YoloEvaluator.py`` one need to do following steps:
+To run ``YoloObjDetEvaluator.py`` one need to do following steps:
 
-1. Run ``pip install ultralytics``
-2. Run the command found in ``results.md`` from the ``.\Evaluation\ObjectDetection`` directory
+1. Run the command found in ``results.md`` from the ``.\Evaluation\ObjectDetection`` directory
    
 
 ## Inference
 
 1. Run ``py .\ImageAnalyser.py --image ".." --analyser ".." [--print-result] [--show-image] [--save-image]`` from the ``.\Inference`` directory
+2. Available analysers are ``yolo``, ``azure``, ``google``, ``grit``, ``magic``, ``cocoVal2014`` and ``cocoVal2017`` 
 
 ## Acknowledgement
 

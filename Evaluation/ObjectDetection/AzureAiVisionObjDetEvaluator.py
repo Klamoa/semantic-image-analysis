@@ -8,7 +8,7 @@ from overrides import override
 from ObjectDetectionEvaluator import ObjectDetectionEvaluator
 
 
-class AzureAiVisionEvaluator(ObjectDetectionEvaluator):
+class AzureAiVisionObjDetEvaluator(ObjectDetectionEvaluator):
 
     __service_options = None
     __analysis_options = None
@@ -89,5 +89,5 @@ if __name__ == "__main__":
 
     config = parser.parse_args()
 
-    evaluator = AzureAiVisionEvaluator(config)
+    evaluator = AzureAiVisionObjDetEvaluator(config)
     evaluator.run_evaluation()

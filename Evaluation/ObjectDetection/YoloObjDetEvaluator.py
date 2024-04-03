@@ -6,7 +6,7 @@ from ultralytics import YOLO
 from ObjectDetectionEvaluator import ObjectDetectionEvaluator
 
 
-class YoloEvaluator(ObjectDetectionEvaluator):
+class YoloObjDetEvaluator(ObjectDetectionEvaluator):
 
     __model = None
 
@@ -55,5 +55,5 @@ if __name__ == "__main__":
 
     config = parser.parse_args()
 
-    evaluator = YoloEvaluator(config)
+    evaluator = YoloObjDetEvaluator(config)
     evaluator.run_evaluation()

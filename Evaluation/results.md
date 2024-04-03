@@ -3,27 +3,27 @@
 ## YOLOv8
 
 ```sh
-py .\YoloEvaluator.py --split val2017 --path2model "yolov8m.pt"
+py .\YoloObjDetEvaluator.py --split val2017 --path2model "yolov8m.pt"
 ```
 
 ```sh
-py .\YoloEvaluator.py --split val2017 --path2model "yolov8l.pt"
+py .\YoloObjDetEvaluator.py --split val2017 --path2model "yolov8l.pt"
 ```
 
 ```sh
-py .\YoloEvaluator.py --split val2017 --path2model "yolov8x.pt"
+py .\YoloObjDetEvaluator.py --split val2017 --path2model "yolov8x.pt"
 ```
 
 ## Azure AI Vision
 
 ```sh
-py .\AzureAiVisionEvaluator.py --split val2017 --vision_endpoint "..." --vision_key "..."
+py .\AzureAiVisionObjDetEvaluator.py --split val2017 --vision_endpoint "..." --vision_key "..."
 ```
 
 ## Google Cloud Vision
 
 ```sh
-py .\GoogleCloudVisionEvaluator.py --split val2017
+py .\GoogleCloudVisionObjDetEvaluator.py --split val2017
 ```
 
 ## Table
@@ -43,7 +43,7 @@ py .\GoogleCloudVisionEvaluator.py --split val2017
 ## Grit (valid):
 
 ```sh
-py .\GritEvaluator.py --split valid
+py .\GritImgCapEvaluator.py --split valid
 ```
 
 [//]: # (```py)
@@ -55,7 +55,7 @@ py .\GritEvaluator.py --split valid
 ## Grit+ (valid):
 
 ```sh
-py .\GritEvaluator.py --path2model "../../grit/checkpoint/grit_checkpoint_4ds.pth" --split valid
+py .\GritImgCapEvaluator.py --path2model "../../grit/checkpoint/grit_checkpoint_4ds.pth" --split valid
 ```
 
 [//]: # (```py)
@@ -67,7 +67,7 @@ py .\GritEvaluator.py --path2model "../../grit/checkpoint/grit_checkpoint_4ds.pt
 ## Grit (test):
 
 ```sh
-py .\GritEvaluator.py --split test
+py .\GritImgCapEvaluator.py --split test
 ```
 
 [//]: # (```py)
@@ -79,7 +79,7 @@ py .\GritEvaluator.py --split test
 ## Grit+ (test):
 
 ```sh
-py .\GritEvaluator.py --path2model "../../grit/checkpoint/grit_checkpoint_4ds.pth" --split test
+py .\GritImgCapEvaluator.py --path2model "../../grit/checkpoint/grit_checkpoint_4ds.pth" --split test
 ```
 
 [//]: # (```py)
@@ -91,7 +91,7 @@ py .\GritEvaluator.py --path2model "../../grit/checkpoint/grit_checkpoint_4ds.pt
 ## Magic (valid)
 
 ```sh
-py .\MagicEvaluator.py --split valid
+py .\MagicImgCapEvaluator.py --split valid
 ```
 
 [//]: # (```py)
@@ -103,7 +103,7 @@ py .\MagicEvaluator.py --split valid
 ## Magic (test)
 
 ```sh
-py .\MagicEvaluator.py --split test
+py .\MagicImgCapEvaluator.py --split test
 ```
 
 [//]: # (```py)
@@ -115,7 +115,7 @@ py .\MagicEvaluator.py --split test
 ## Azure AI Vision (valid)
 
 ```sh
-py .\AzureAiVisionEvaluator.py --vision_endpoint "..." --vision_key "..." --split valid
+py .\AzureAiVisionImgCapEvaluator.py --vision_endpoint "..." --vision_key "..." --split valid
 ```
 
 [//]: # (```py)
@@ -127,7 +127,7 @@ py .\AzureAiVisionEvaluator.py --vision_endpoint "..." --vision_key "..." --spli
 ## Azure AI Vision (test)
 
 ```sh
-py .\AzureAiVisionEvaluator.py --vision_endpoint "..." --vision_key "..." --split test
+py .\AzureAiVisionImgCapEvaluator.py --vision_endpoint "..." --vision_key "..." --split test
 ```
 
 [//]: # (```py)
