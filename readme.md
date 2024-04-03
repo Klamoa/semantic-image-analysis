@@ -83,7 +83,7 @@ To run ``YoloObjDetEvaluator.py`` one need to do following steps:
 
 ## Inference
 
-1. Run ``py .\ImageAnalyser.py --image ".." --analyser ".." [--print-result] [--show-image] [--save-image]`` from the ``.\Inference`` directory
+1. Run ``python .\ImageAnalyser.py --image ".." --analyser ".." [--print-result] [--show-image] [--save-image]`` from the ``.\Inference`` directory
 2. Available analysers are ``yolo``, ``azure``, ``google``, ``grit``, ``magic``, ``cocoVal2014`` and ``cocoVal2017`` 
 
 ## Acknowledgement
